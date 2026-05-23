@@ -1,3 +1,4 @@
+
 /*
  * Copyright (C) 2023 The Android Open Source Project
  *
@@ -15,12 +16,16 @@
  */
 
 package com.example.inventory.data
+import androidx.room.Entity
+import androidx.room.PrimaryKey
 
 
 /**
  * Entity data class represents a single row in the database.
  */
-class Item(
+@Entity(tableName = "items")
+data class Item(
+    @PrimaryKey(autoGenerate = true)
     val id: Int = 0,
     val name: String,
     val price: Double,
